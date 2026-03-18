@@ -1,61 +1,21 @@
-import { Routes,Route,Link} from "react-router-dom"
+import {Routes,Route} from 'react-router-dom'
+import Nav from "./components/Nav"
+import Home from "./pages/Home"
+import Search from "./pages/Search"
+import Portfolio from "./pages/Portfolio"
+import Compare from "./pages/Compare"
 function App() {
 
   return (
     <>
     <Nav/>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/search" element={<Search/>}/>
+      <Route path="/portfolio" element={<Portfolio/>}/>
+      <Route path="/compare" element={<Compare/>}/>
+    </Routes>
     </>
-  )
-}
-
-function Nav(){
-  return(
-    <div>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/Search">Search</Link> 
-        <Link to="/Portfolio">Portfolio</Link>
-        <Link to="/Compare">Compare</Link>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/Search" element={<Search/>}/>
-        <Route path="/Portfolio" element={<Portfolio/>}/>
-        <Route path="/Compare" element={<Compare/>}/>
-      </Routes>
-    </div>
-  )
-}
-
-function Home(){
-  return (
-    <>
-      <p>Hej</p>
-    </>
-  )
-}
-
-function Search(){
-  return(
-    <div>
-      <p>Search</p>
-    </div>
-  )
-}
-
-function Portfolio(){
-  return(
-    <div>
-      Portfolio
-    </div>
-  )
-}
-
-function Compare(){
-  return(
-    <div>
-      Compare
-    </div>
   )
 }
 export default App
